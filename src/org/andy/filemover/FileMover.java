@@ -57,6 +57,7 @@ public class FileMover {
 		fileExtensions = config.getProperty("watch.extension").split(",");
 
 		try {
+			TraySupport.initTray(); // Tray anzeigen
 			new FileMover().startWatching();
 			logger.info("FileMover überwacht: " + folderToWatch);
 		} catch (IOException | InterruptedException e) {
